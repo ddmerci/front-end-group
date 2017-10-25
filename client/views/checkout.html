@@ -1,0 +1,26 @@
+<div class="page-header row">
+            <h1 class="col-md-12">CHECKOUT</h1>
+    </div>
+    
+    <div ng-controller="CheckoutController">
+        <form stripe-form="CALLBACK"> 
+    
+        <!-- VALIDATES PAYMENT INFO AS ENTERED -->
+        <input type="text" ng-model="blah" payments-validate="VALIDATION_TYPE" />
+        <input type="text" ng-model="number" payments-validate="card" />
+        <input type="text" ng-model="number" payments-validate="card" payments-type-model="type"/>
+        <input type="text" ng-model="expiry" payments-validate="expiry" />
+        <input type="text" ng-model="cvc" payments-validate="cvc" />
+        <input type="text" ng-model="cvc" payments-validate="cvc" payments-type-model="type"/> 
+    
+        <!-- STRIPE PAYMENT FORMATTING --- UNSURE HOW THESE SHOULD BE ARRANGED WITHIN STRIPE-FORM  -->
+        <input type="text" payments-format="FORMATTING_TYPE" />
+        <input type="text" payments-format="card" />
+        <input type="text" payments-format="expiry" />
+        <input type="text" payments-format="cvc" />
+    
+        <!-- BUTTON NG-CLICK processPayment() CONTROLLER -->
+       
+    
+        </form>
+    </div>

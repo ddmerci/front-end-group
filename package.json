@@ -1,0 +1,22 @@
+{
+  "name": "covalence-store-project",
+  "version": "1.0.0",
+  "description": "An online store for Covalence merch",
+  "main": "server/index.js",
+  "scripts": {
+    "test": "source .variables && nodemon",
+    "start": "node server/index.js"
+  },
+  "keywords": [
+    "covalence"
+  ],
+  "author": "Pink Prancing Ponies",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "mysql": "^2.15.0",
+    "prerender-node": "^2.7.4",
+    "stripe": "^5.1.1"
+  }
+}

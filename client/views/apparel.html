@@ -1,0 +1,16 @@
+<div class="page-header row">
+    <h1 class="col-md-12">APPAREL</h1>
+</div>
+
+<div class="clear list-group">
+    <div class="list-group-item" ng-repeat="a in apparel" ng-controller="ApparelController">
+        <img src="{{ a.imageurl }}" width="150" height="150">
+        <h3>{{ a.name }}</h3>
+        <h5>{{ a.description }} {{ a.price }}</h5>
+        
+        <p>
+            <a class="btn btn-info" role="button" ng-href="/{{ a.id }}" ng-click="addToCart()">ADD TO CART</a>
+        </p>
+    </div>
+</div>
+
