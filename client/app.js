@@ -5,6 +5,9 @@ angular.module('store', ['ngRoute', 'ngResource', 'store.controllers', 'store.fa
     .when('/', { 
         templateUrl: 'views/welcome.html'
     })
+    .when('/contact', { 
+        templateUrl: 'views/contactus.html', 
+    })
     .when('/products/merch', {
         templateUrl: 'views/merch.html',
         controller: 'MerchController' 
@@ -20,6 +23,10 @@ angular.module('store', ['ngRoute', 'ngResource', 'store.controllers', 'store.fa
     .when('/products/:id', { 
         templateUrl: 'views/detail.html',
         controller: 'DetailController' 
+    })
+    .when('/checkout', { 
+        templateUrl: 'views/checkout.html',
+        controller: 'CheckoutController' 
     })
     .otherwise({
         redirectTo: '/'

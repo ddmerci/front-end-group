@@ -7,3 +7,6 @@ angular.module('store.services', [])
             }
         }
     }])
+.service("CheckoutService", function(){
+    this.checkoutItems=[];
+})

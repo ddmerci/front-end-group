@@ -1,26 +1,43 @@
+<!-- NAVBAR (SEE ABOUTUS.HTML, STILL UNDER EDIT, COPY & PASTE UPON COMPLETION) -->
+
+
+<!-- CHECKOUT CONTROLLER -->
 <div class="page-header row">
-            <h1 class="col-md-12">CHECKOUT</h1>
-    </div>
-    
-    <div ng-controller="CheckoutController">
-        <form stripe-form="CALLBACK"> 
-    
-        <!-- VALIDATES PAYMENT INFO AS ENTERED -->
-        <input type="text" ng-model="blah" payments-validate="VALIDATION_TYPE" />
-        <input type="text" ng-model="number" payments-validate="card" />
-        <input type="text" ng-model="number" payments-validate="card" payments-type-model="type"/>
-        <input type="text" ng-model="expiry" payments-validate="expiry" />
-        <input type="text" ng-model="cvc" payments-validate="cvc" />
-        <input type="text" ng-model="cvc" payments-validate="cvc" payments-type-model="type"/> 
-    
-        <!-- STRIPE PAYMENT FORMATTING --- UNSURE HOW THESE SHOULD BE ARRANGED WITHIN STRIPE-FORM  -->
-        <input type="text" payments-format="FORMATTING_TYPE" />
-        <input type="text" payments-format="card" />
-        <input type="text" payments-format="expiry" />
-        <input type="text" payments-format="cvc" />
-    
-        <!-- BUTTON NG-CLICK processPayment() CONTROLLER -->
-       
-    
-        </form>
-    </div>
+    <h1 class="col-md-12">CHECKOUT</h1>
+
+</div>
+            <!-- CART CONTROLLER BINDING -->
+<div ng-repeat="s in shoppingCart">
+<img src="{{ s.imageurl }}" width="300" height="300" ng-href="/checkout">
+<h3>{{ s.title }}</h3>
+<p>{{ s.price }}</p>
+</div>
+
+<div ng-controller="CheckoutController">
+    <!-- html form -->
+    <form action="charge()">
+        <label class="item item-input">
+            <span class="input-label">Card number</span>
+            <input type="text" size="20" ng-model="FormData.number" placeholder="4242 4242 4242 4242" />
+        </label>
+
+        <label class="item item-input">
+            <span class="input-label">Exp. Mth (MM)</span>
+            <input type="text" size="2" ng-model="FormData.exp_month">
+        </label>
+
+        <label class="item item-input">
+            <span class="input-label">Exp. Year (YYYY)</span>
+            <input type="text" size="4" ng-model="FormData.exp_year">
+        </label>
+
+        <label class="item item-input">
+            <span class="input-label">Sec. Code (CVC)</span>
+            <input type="text" size="4" ng-model="FormData.cvc">
+        </label>
+    </form>
+</div>
+
+<div class="padding center">
+    <button class="button button-block button-balanced" ng-click="processPurchase()">Submit</button>
+</div>

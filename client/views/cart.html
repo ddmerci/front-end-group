@@ -1,7 +1,6 @@
 <div class="page-header row">
     <h1 class="col-md-12">SHOPPING CART</h1>
 </div>
-
 <div class="clear list-group">
     <div class="list-group-item" ng-repeat="p in purchases" ng-controller="CartController">
         <h3>{{ p.name }}</h3>
@@ -9,12 +8,9 @@
         <input type="number" ng-model="cost">
         <input type="number" ng-model="quantity">
         <span>{{ cost * quantity | currency }}</span>
-    </div>    
+    </div>
 </div>
 <div>
     <!-- ??ng-model input template for cart total?? Research it -->
-   
     <!-- ADD "CHECKOUT" BUTTON -->
-    
 </div>
-

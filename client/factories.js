@@ -19,6 +19,15 @@ angular.module('store.factories', [])
             }
         });
     }])
+    .factory('Product', ['$resource', function ($resource) {
+        return $resource('/api/products/:id', { id: '@id' }, {
+            queryByCategory: {
+                method: 'GET',
+                url: '/api/products', 
+                isArray: true
+            }
+        });
+    }])
 
     .factory('Purchases', ['$resource', function ($resource) {
         return $resource('/api/purchases/:id');

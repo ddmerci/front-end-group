@@ -1,16 +1,64 @@
-<div class="page-header row">
-    <h1 class="col-md-12">APPAREL</h1>
-</div>
 
-<div class="clear list-group">
-    <div class="list-group-item" ng-repeat="a in apparel" ng-controller="ApparelController">
-        <img src="{{ a.imageurl }}" width="150" height="150">
-        <h3>{{ a.name }}</h3>
-        <h5>{{ a.description }} {{ a.price }}</h5>
+<nav class="navbar navbar-default">
+        <div class="container-fluid">
+          <!-- Brand and toggle get grouped for better mobile display -->
+          <div class="navbar-header">
+             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+               <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+               <span class="icon-bar"></span>
+            </button>
+            
+          </div>
+      
+          <!-- Collect the nav links, forms, and other content for toggling -->
+          <ul class="nav navbar-nav navbar-right">
+                <li class="nav-item">
+                  <a class="nav-link active" ng-href=“/about“>ABOUT</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" ng-href=“/products/merch“>MERCH</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" ng-href=“/products/apparel”>APPAREL</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link disabled" href=“/contact“>CONTACT</a>
+                </li>
+              </ul>
+         
+     </div><!-- /.navbar-collapse -->
+     </div><!-- /.container-fluid -->
+     </nav>
+    
+     <div class="page-header" id="logo">
+            <a ng-href="/products/merch"> <img src="https://s1.postimg.org/1hgme8qoa7/Newlogo.png" alt=""></a>
+    </div>
+
+
+   
+
+<!-- DEFAULT FROM WELCOME / MERCH HEADER -->
+
         
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+<ul class="nav navbar-nav navbar-right">
+                <li><a href="/checkout">Cart <i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
+         </ul>
+        <h1 class="col-md-12">APPAREL</h1>
+    </div>
+</div>
+<!-- APPAREL CONTROLLER BINDING ng-click="addToCart()"-->
+<div class="wrapper">
+    <div ng-repeat="a in apparel" ng-controller="ApparelController">
+        <a ng-href="/products/{{ a.id }}"><img src="{{ a.imageurl }}" width="300" height="300"></a> 
+        <h3>{{ a.name }}</h3>
+        <!-- <h5>{{ a.description }} {{ a.price }}</h5> -->
+
         <p>
-            <a class="btn btn-info" role="button" ng-href="/{{ a.id }}" ng-click="addToCart()">ADD TO CART</a>
+            <a class="btn btn-info" role="button" ng-href="/products/{{ a.id }}">MORE INFO</a>
         </p>
     </div>
 </div>
-
