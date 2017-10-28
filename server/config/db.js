@@ -5,49 +5,49 @@ var pool = mysql.createPool({
     host: process.env.RDS_HOSTNAME,
     user: process.env.RDS_USER,
     password: process.env.RDS_PASSWORD,
-    database: 'covalence-store' 
+    database: 'covalence-store'
 });
 exports.pool = pool;
 
-exports.rows = function(procedureName, args) {
+exports.rows = function (procedureName, args) {
     return callProcedure(procedureName, args)
-            .then(function(resultsets) {
-                return resultsets[0];
-            });
+        .then(function (resultsets) {
+            return resultsets[0];
+        });
 }
 
-exports.row = function(procedureName, args) {
+exports.row = function (procedureName, args) {
     return callProcedure(procedureName, args)
-            .then(function(resultsets) {
-                return resultsets[0][0];
-            });
+        .then(function (resultsets) {
+            return resultsets[0][0];
+        });
 }
 
-exports.empty = function(procedureName, args) {
+exports.empty = function (procedureName, args) {
     return callProcedure(procedureName, args)
-            .then(function() {
-                return;
-            });
+        .then(function () {
+            return;
+        });
 }
 
 function callProcedure(procedureName, args) {
-    return new Promise(function(resolve, reject) {
-        pool.getConnection(function(err, connection) {
+    return new Promise(function (resolve, reject) {
+        pool.getConnection(function (err, connection) {
             if (err) {
                 reject(err);
             } else {
                 var placeholders = '';
                 if (args && args.length > 0) {
                     for (var i = 0; i < args.length; i++) {
-                        if (i === args.length - 1) { 
+                        if (i === args.length - 1) {
                             placeholders += '?';
                         } else {
                             placeholders += '?,';
                         }
                     }
                 }
-                var callString = 'CALL ' + procedureName + '(' + placeholders + ');'; 
-                connection.query(callString, args, function(err, resultsets) {
+                var callString = 'CALL ' + procedureName + '(' + placeholders + ');';
+                connection.query(callString, args, function (err, resultsets) {
                     connection.release();
                     if (err) {
                         reject(err);

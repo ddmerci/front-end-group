@@ -1,68 +1,70 @@
 
-<nav class="navbar navbar-default">
+    <div class="jumbotron jumbotron-fluid">
+        <a href="/products/merch">
+            <img id="header-logo" src="https://s1.postimg.org/6boi8sj1kf/Screen_Shot_2017-10-25_at_9.18.50_PM.png" alt=""> </a>
+    </div>
+    <nav class="navbar navbar-default">
         <div class="container-fluid">
-          <!-- Brand and toggle get grouped for better mobile display -->
-          <div class="navbar-header">
-             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-               <span class="sr-only">Toggle navigation</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-               <span class="icon-bar"></span>
-            </button>
-            
-          </div>
-      
-          <!-- Collect the nav links, forms, and other content for toggling -->
-          <ul class="nav navbar-nav navbar-right">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+                    aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <ul class="nav navbar-nav navbar-right">
                 <li class="nav-item">
-                  <a class="nav-link active" ng-href=“/about“>ABOUT</a>
+                    <a class="nav-link" href="/products/merch">MERCH</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" ng-href=“/products/merch“>MERCH</a>
+                    <a class="nav-link" href="/products/apparel">APPAREL</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" ng-href=“/products/apparel”>APPAREL</a>
+                    <a class="nav-link" href="/contact">CONTACT</a>
                 </li>
-                <li class="nav-item">
-                  <a class="nav-link disabled" href=“/contact“>CONTACT</a>
+                <li>
+                    <a href="/checkout">
+                        <img id="cart-icon" src="http://www.clker.com/cliparts/m/8/v/j/x/J/shopping-cart-blur-hi.png"
+                            alt="">
+                        <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                    </a>
                 </li>
-              </ul>
-         
-     </div><!-- /.navbar-collapse -->
-     </div><!-- /.container-fluid -->
-     </nav>
-    
-     <div class="page-header" id="logo">
-            <a ng-href="/products/merch"> <img src="https://s1.postimg.org/1hgme8qoa7/Newlogo.png" alt=""></a>
-    </div>
+            </ul>
 
-
-   
-
-<!-- DEFAULT FROM WELCOME / MERCH HEADER -->
-
-        
-<div class="jumbotron jumbotron-fluid">
-    <div class="container">
-<ul class="nav navbar-nav navbar-right">
-                <li><a href="/checkout">Cart <i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
-         </ul>
-        <h1 class="col-md-12">MERCH</h1>
-    </div>
+        </div>
+        <!-- /.navbar-collapse -->
 </div>
+<!-- /.container-fluid -->
+</nav>
 
 
 
-<div class="wrapper">
 
-    <div ng-repeat="m in merch" ng-controller="MerchController">
-        <a ng-href="/products/{{ m.id }}"><img src="{{ m.imageurl }}" width="300" height="300" ng-href="/products/{{ m.id }}"></a>
-        <h3>{{ m.name }}</h3>
-        <!-- <h5>{{ m.description }} {{ m.price }}</h5> -->
 
-        <p>
-            <a class="btn btn-info" role="button" ng-href="/products/{{ m.id }}" ng-href="/products/detail">MORE INFO</a>
-        </p>
+<div id="home-merch"></div>
+
+
+
+
+<div class="item-box">
+    <div class="wrapper">
+
+        <div class="box" ng-repeat="m in merch" ng-controller="MerchController">
+            <a ng-href="/products/{{ m.id }}">
+                <img src="{{ m.imageurl }}" width="350" height="350" ng-href="/products/{{ m.id }}">
+            </a>
+            <h3 class="item-text">{{ m.title }}</h3>
+            <!-- <h5>{{ m.description }} {{ m.price }}</h5> -->
+
+            <p>
+                <a class="btn btn-info" role="button" ng-href="/products/{{ m.id }}" ng-href="/products/detail">DETAIL</a>
+            </p>
+        </div>
     </div>
-<!-- </div> -->
 </div>

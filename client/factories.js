@@ -4,7 +4,7 @@ angular.module('store.factories', [])
         return $resource('/api/products/merch', {
             queryByCategory: {
                 method: 'GET',
-                url: '/api/products/merch', 
+                url: '/api/products/merch',
                 isArray: true
             }
         });
@@ -14,7 +14,7 @@ angular.module('store.factories', [])
         return $resource('/api/products/apparel', {
             queryByCategory: {
                 method: 'GET',
-                url: '/api/products/apparel', 
+                url: '/api/products/apparel',
                 isArray: true
             }
         });
@@ -30,7 +30,10 @@ angular.module('store.factories', [])
     }])
 
     .factory('Purchases', ['$resource', function ($resource) {
-        return $resource('/api/purchases/:id');
+        return $resource('/api/purchases/:id', { id: '@id' });
+        update: {
+            method: 'PUT'
+        }
     }])
 
     .factory('CreatePurchases', ['$resource', function ($resource) {

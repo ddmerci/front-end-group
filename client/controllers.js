@@ -4,66 +4,50 @@ angular.module('store.controllers', [])
 
         $scope.merch = Merch.query();
 
-        $scope.addToCart = function (id, imageurl, title, price) {
-            var payload = {
-                id: id,
-                imageurl: imagery,
-                title: title,
-                price: price
-            }
-            checkoutService.checkoutItems.push(payload);
-            console.log(checkoutService.checkoutItems);
-        }
+
     }])
 
     .controller('ApparelController', ['$scope', 'Apparel', function ($scope, Apparel) {
 
         $scope.apparel = Apparel.query();
 
-        $scope.addToCart = function (id, imageurl, title, price) {
-            var payload = {
-                id: id,
-                imageurl: imageurl,
-                title: title,
-                price: price
-            }
-            checkoutService.checkoutItems.push(payload);
-            console.log(checkoutService.checkoutItems);
-        }
+
+        
     }])
 
-    .controller('DetailController', ['$scope', '$routeParams', '$location', 'Product', function ($scope, $routeParams, $location, Product) {
-        $scope.product = Product.get({ id: $routeParams.id });
+    .controller('DetailController', ['$scope', '$routeParams', '$location', 'Product', 'CheckoutService', function ($scope, $routeParams, $location, Product, CheckoutService) {
+        $scope.product = Product.get({ id: $routeParams.id });  
 
         $scope.addToCart = function (id, imageurl, title, price) {
             var payload = {
-                id: id,
-                imageurl: imageurl,
-                title: title,
-                price: price
+                id: $scope.product.id,
+                imageurl: $scope.product.imageurl,
+                title: $scope.product.title,
+                price: $scope.product.price
+
             }
-            checkoutService.checkoutItems.push(payload);
-            console.log(checkoutService.checkoutItems);
+            CheckoutService.checkoutItems.push(payload);
+            alert('Item has been added to your cart!');
         }
 
         $scope.cart = function () {
-            $location.path('/' + $routeParams.id + '/add_to_cart');
+            $location.path('/' + $routeParams.id + '/checkout');
         }
     }])
 
 
-    .controller('CheckoutController', ['$scope', '$location', 'Products', 'Purchases', 'CheckoutService', '$routeParams', function ($scope, $location, Products, Purchases, CheckoutService, $routeParams) {
-        $scope.product = Products.query();
-
-        $scope.remove = function () {
-
-            if (confirm('Are you sure you want to remove this item from the cart?')) {
-                $scope.product.$delete(function () {
-                    // $location.replace().path('/');
-                });
+    .controller('CheckoutController', ['$scope', '$location', 'Product', 'Purchases', 'CheckoutService', '$routeParams', function ($scope, $location, Product, Purchases, CheckoutService, $routeParams) {
+        $scope.cart = CheckoutService.checkoutItems;
+       
+        // get total function for checkout cart
+        $scope.getTotal = function () {
+            var total = 0
+            for (var i = 0; i <$scope.cart.length; i++){
+                var prod = $scope.cart[i];
+                total += (prod.price);
             }
+            return total;
         }
-
 
         var elements = stripe.elements();
         var card = elements.create('card');
@@ -71,26 +55,43 @@ angular.module('store.controllers', [])
 
         $scope.errorMessage = '';
 
-        $scope.processPurchase = function () {
+
+        $scope.stripeCharge = function() {
             stripe.createToken(card, {
-                name: $scope.name,
-                address_line1: $scope.line1,
-                address_city: $scope.city,
-                address_state: $scope.state
-            }).then(function (result) {
+                // name: $scope.name,
+                // address_line1: $scope.line1,
+                // address_line2: $scope.line2,
+                // address_city: $scope.city,
+                // address_state: $scope.state
+            }).then(function(result) {
                 if (result.error) {
                     $scope.errorMessage = result.error.message;
                 } else {
-                    var d = new Purchase({
+                    // result.token is the card token (need id property)
+                    var cart = CheckoutService.checkoutItems;
+                    var c = new Purchases({
                         token: result.token.id,
-                        amount: $scope.amount
+                        amount: $scope.getTotal(),
+                        cart: cart
                     });
-                    d.$save(function () {
-                        alert('Thank you for your purchase');
+                    
+                    c.$save(function() {
+                        alert('Thank you for the payment, an email has been sent.');
                         $location.path('/');
-                    }, function (err) {
+                    }, function(err) {
+                        console.log(err);
                     });
                 }
             });
         }
+        // end total function
+        
+        $scope.remove = function () {
+            var i = CheckoutService.checkoutItems.indexOf($scope.cart.item);
+            if (confirm('Are you sure you want to remove this item from the cart?')) {
+                CheckoutService.checkoutItems.splice(i, 1);
+            }
+        }
+
+
     }]);

@@ -1,6 +1,6 @@
 var stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
 
-exports.charge = function(token, amt) {
+exports.charge = function (token, amt) {
     return stripe.charges.create({
         amount: amt * 100,
         currency: 'usd',
@@ -8,3 +8,5 @@ exports.charge = function(token, amt) {
         description: 'Checkout'
     });
 }
+
+

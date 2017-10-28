@@ -16,10 +16,6 @@ angular.module('store', ['ngRoute', 'ngResource', 'store.controllers', 'store.fa
         templateUrl: 'views/apparel.html',
         controller: 'ApparelController' 
     })
-    .when('/purchases', {
-        templateUrl: 'views/cart.html',
-        controller: "PurchasesController" 
-    })
     .when('/products/:id', { 
         templateUrl: 'views/detail.html',
         controller: 'DetailController' 

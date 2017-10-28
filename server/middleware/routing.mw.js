@@ -2,7 +2,7 @@ var path = require('path');
 
 var clientPath = path.join(__dirname, '../../client');
 
-exports.stateRouting = function(req, res, next) {
+exports.stateRouting = function (req, res, next) {
     if (isAsset(req.url)) {
         return next();
     } else {

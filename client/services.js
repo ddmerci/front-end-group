@@ -7,6 +7,10 @@ angular.module('store.services', [])
             }
         }
     }])
-.service("CheckoutService", function(){
-    this.checkoutItems=[];
-})
+    .service("CheckoutService", function () {
+        this.checkoutItems = [];
+        // return { get: get };
+        // function get(){
+        //     return this.checkoutItems;
+        // };
+    });

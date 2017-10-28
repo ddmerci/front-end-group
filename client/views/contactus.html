@@ -1,52 +1,94 @@
-
-<nav class="navbar navbar-default">
-        <div class="container-fluid">
-          <!-- Brand and toggle get grouped for better mobile display -->
-          <div class="navbar-header">
-             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-               <span class="sr-only">Toggle navigation</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-               <span class="icon-bar"></span>
-            </button>
-            
-          </div>
-      
-          <!-- Collect the nav links, forms, and other content for toggling -->
-          <ul class="nav navbar-nav navbar-right">
-                <li class="nav-item">
-                  <a class="nav-link active" ng-href=“/about“>ABOUT</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" ng-href=“/products/merch“>MERCH</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" ng-href=“/products/apparel”>APPAREL</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link disabled" href=“/contact“>CONTACT</a>
-                </li>
-              </ul>
-         
-     </div><!-- /.navbar-collapse -->
-     </div><!-- /.container-fluid -->
-     </nav>
-    
-     <div class="page-header" id="logo">
-            <a ng-href="/products/merch"> <img src="https://s1.postimg.org/1hgme8qoa7/Newlogo.png" alt=""></a>
-    </div>
-
-
-   
-
-<!-- DEFAULT FROM WELCOME / MERCH HEADER -->
-
-        
 <div class="jumbotron jumbotron-fluid">
-    <div class="container">
-<ul class="nav navbar-nav navbar-right">
-                <li><a href="/checkout">Cart <i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
-         </ul>
-        <h1 class="col-md-12">CONTACT</h1>
+    <a href="/products/merch">
+        <img id="header-logo" src="https://s1.postimg.org/6boi8sj1kf/Screen_Shot_2017-10-25_at_9.18.50_PM.png" alt=""> </a>
+</div>
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+                aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <ul class="nav navbar-nav navbar-right">
+            <li class="nav-item">
+                <a class="nav-link" href="/products/merch">MERCH</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/products/apparel">APPAREL</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/contact">CONTACT</a>
+            </li>
+            <li>
+                <a href="/checkout">
+                    <img id="cart-icon" src="http://www.clker.com/cliparts/m/8/v/j/x/J/shopping-cart-blur-hi.png"
+                        alt="">
+                    <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                </a>
+            </li>
+        </ul>
+
     </div>
+    <!-- /.navbar-collapse -->
+</div>
+<!-- /.container-fluid -->
+</nav>
+
+
+
+<div class=>
+    <h2 class="contactus">We Are Covalence. We Teach You How To Code.</h2>
+    <h2 class="contactus">But We'd Also Love To Hear From You!</h2>
+    <p></p>
+    <p class="contactus">Send us questions, opinions, or even your thoughts on when the Singularity will occur and all this technology we're using
+        will turn against us - our bet is 2045. Whatever it is, we'll get back to you promptly.</p>
+    <section id="contact" class="content-section text-center">
+        <div class="contact-section">
+            <div class="container">
+                <h2>Contact Us</h2>
+                <p>Feel free to shout us by feeling the contact form or visiting our social network sites like Fackebook,Whatsapp,Twitter.</p>
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2">
+                        <form class="form-horizontal">
+                            <div class="form-group">
+                                <label for="exampleInputName2">Name</label>
+                                <input type="text" class="form-control" id="exampleInputName2" placeholder="Jane Doe">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputEmail2">Email</label>
+                                <input type="email" class="form-control" id="exampleInputEmail2" placeholder="jane.doe@example.com">
+                            </div>
+                            <div class="form-group ">
+                                <label for="exampleInputText">Your Message</label>
+                                <textarea class="form-control" placeholder="Description"></textarea>
+                            </div>
+                            <button type='{{' submit '}}' class="btn btn-default">Send Message</button>
+                        </form>
+                        <hr>
+                        <h3>Our Social Sites</h3>
+                        <ul class="list-inline banner-social-buttons">
+                            <li>
+                                <a href="https://www.facebook.com/covalence.io/?ref=br_rs" class="btn btn-default btn-lg">
+                                    <i class="fa fa-facebook">
+                                        <span class="network-name">Facebook</span>
+                                    </i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <h2 class="contactus">
+        <a href="https://covalence.io/blog/" target="_blank">In the meantime check out our blog.</a>
+    </h2>
 </div>
