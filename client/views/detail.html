@@ -29,8 +29,7 @@
             </li>
             <li>
                 <a href="/checkout">
-                    <img id="cart-icon" src="http://www.clker.com/cliparts/m/8/v/j/x/J/shopping-cart-blur-hi.png"
-                        alt="">
+                    <img id="cart-icon" src="http://www.clker.com/cliparts/m/8/v/j/x/J/shopping-cart-blur-hi.png" alt="">
                     <i class="fa fa-shopping-cart" aria-hidden="true"></i>
                 </a>
             </li>
@@ -38,21 +37,39 @@
 
     </div>
     <!-- /.navbar-collapse -->
-</div>
-<!-- /.container-fluid -->
+    </div>
+    <!-- /.container-fluid -->
 </nav>
 
 <!-- ITEM DETAIL CONTROLLER BINDING -->
-<div class="wrapper">
+<div class="item-box">
+    <div id="detail-wrapper">
 
-    <div class="">
-        <img src="{{ product.imageurl }}" width="500" height="500">
-        <h3>{{ product.title }}</h3>
-        <h5>{{ product.description }} {{ product.price }}</h5>
+        <div id="detail-box">
+            <img src="{{ product.imageurl }}" width="600" height="600">
+            <div id="detail-data">
+                <h2 class="item-text">{{ product.title }}</h2>
+                <h3 class="item-text">{{ product.description }}</h3>
 
-        <p>
-            <a class="btn btn-info" role="button" ng-href="/products/merch" ng-click="addToCart()">ADD TO CART</a>
-        </p>
+                <p></p>
+                    <h3> {{ product.price }}</h3> <a class="btn btn-info" role="button" ng-href="/products/merch" ng-click="addToCart()">ADD TO CART</a>
+                
+            </div>
+        </div>
     </div>
 </div>
-</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<footer>
+        <div class="container">
+                <a ng-href="/"><h5>PINK PRANCING PONIES</h5></a>
+                <h5 class="ppp">ANTHONY<img id="ponieA" src="http://www.clker.com/cliparts/w/D/J/x/O/0/horse-md.png" alt="">
+                <h5 class="ppp">DEDE<img id="ponieD" src="http://www.clker.com/cliparts/w/D/J/x/O/0/horse-md.png" alt=""></h5>
+                <h5 class="ppp">SAM<img id="ponieS"src="http://www.clker.com/cliparts/w/D/J/x/O/0/horse-md.png" alt=""></h5>
+                <h5 class="ppp">ELIAS<img id="ponieE" src="http://www.clker.com/cliparts/w/D/J/x/O/0/horse-md.png" alt=""></h5>
+                <h5> 2017 &copy;</h5>
+        </div>
+</footer>

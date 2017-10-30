@@ -1,12 +1,11 @@
-/* ITEM DETAIL */
-
-
 /* NAV BAR */
 .navbar {
   margin: 0%;
 }
 #header-logo {
-  float: top;
+  position: relative;
+  bottom: 47px;
+  border-radius: 5px;
 }
 .jumbotron {
   background: RGBA(255, 255, 255, 1);;
@@ -16,34 +15,52 @@
   border-top-right-radius: 5px;
   max-height: 20px;
 }
-
 #cart-icon {
   right: 0%;
   height: 25px;
   width: 25px;
 }
-
+ul.nav a:link {
+  color: teal;
+}
+ul.nav a:hover { 
+  color: rgb(255, 208, 0) !important; 
+} 
+/* END OF NAV BAR */
 
 
 /* WELCOME */
-#welcome-top {
-  background-image: url(https://s1.postimg.org/5aru6cjxsf/covalence-store-home-hero.jpg);
-  background-size: cover;
-  border-radius: 5px;
-  /* text-align: center;
-  align-content: center; */
-  width: 100%;
-  height: 100vh;
-}
-
 #welcome-drop {
 	color: white;
-	font-weight: bold;
-	background: RGBA(0, 0, 139, .1);
-	/* border-radius: 10px; */
+  font-weight: bold;
+  text-align: center;
+  text-shadow: 2px 2px 8px midnightblue;
+  position: relative;
+  top: -400px;
+  animation: drop 5s forwards;
+}
+@keyframes drop{
+  0%{}
+  10%{ transform: translateY(500px)}
+  100%{ transform: translateY(400px)}
+
+}
+#welcome-top {
+  background-image: url(https://s1.postimg.org/39zo9628zj/covalence-store-home.jpg);
+  background-size: cover;
+  border-radius: 5px;
   width: 100%;
-  height: 15%;
-    /* text-align: center; */
+  height: 100%;
+  text-shadow: 2px 2px 8px yellow;
+}
+#shoppin {
+  position: relative;
+  left: 35%;
+  
+}
+
+#shoppin:hover {
+  color: mediumblue
 }
 
 #the {
@@ -55,27 +72,23 @@
   text-align: right;
   text-size: 60px;
 }
-
-
-
-
-
-
+/* END OF WELCOME */
 
 /*MERCH PAGE ( DEFAULT HOME)*/
-#home-merch {
+#merch-img {
   background-image: url(https://s1.postimg.org/876797kpvz/covalence-store-misc-hero.jpg);
   background-size: cover;
   width: 100%;
   height: 40%;
   background-position: bottom left;
-  border-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
 }
-
-
-
-
-
+#home-icon {
+  height: 20px;
+  width: 20px;
+}
+/* END OF MERCH */
 
 /*APPAREL PAGE*/
 #apparel-img {
@@ -83,142 +96,260 @@
   background-size: cover;
   width: 100%;
   height: 40%;
-  border-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
   
 }
+/* END OF APPAREL */
+
+/* ITEM DETAIL */
+/* .item-text {
+  text-decoration-color: grey;
+} */
+#detail-wrapper {
+  padding-right: 4%;
+}
+#detail-box {
+  margin: 2%;
+  background: RGBA(255, 255, 255, .9);
+  grid-template-columns: 50% 50%;
+  height: 100%;
+  width: 100%;
+  border-radius: 5px;
+  display:  grid;
+  grid-gap: 2%;
+}
+#detail-data {
+  margin: 3%;
+  color: steelblue;
+  padding: 0%;
+}
+/* END OF DETAIL */
 
 
+/* CHECKOUT - CART  */
 
-
-
-/* CHECKOUT  */
-
-/* cart */
 #cart {
   background-color: white;
-  }
-  
+}
+.cart-wrapper {
+  grid-template-columns: 100%;
+  display: grid;
+  padding: 1%;
+}
+.cart-box {
+  margin: 2%;
+  grid-template-columns: 100%;
+  background: RGBA(255, 255, 255, 1);
+  border-radius: 5px;
+  color: rgba(20, 106, 177, 0.884);
+  height: 100px;
+  display: grid;
+}
+#cart-data {
+  grid-template-columns: 20% 30% 40% 10%;
+  display: grid;
+}
+#c-img {
+  display: grid;
+}
+#c-title {
+  padding: 8%;
+  display: grid;
+}
+#c-price {
+  padding: 6%;
+  display: grid;
+}
+#c-remove {
+  margin: 30%;
+  background: RGBA(255, 255, 255, .1);
+  color: red;
+  border-radius: 100%;
+  border: 2px solid red;
+  height: 26px;
+  width: 26px;
+  display: grid;
 
+} 
   
-  
-  /* stripe checkout */
-  #checkout {
-    
-    }
-    
-  .input-label {
-    color: white;
-  }
-
-/* CONTACT US */
-p.contactus2{
+/* CHECKOUT - STRIPE */
+form.my-form {
+  position: relative;
+  width: 500px;
+  left: 30%;
+  color: white;
+}
+#pay-group {
   text-align: center;
-  color:white;
 }
-p.contactus{
-  color:white;
+.pay-logo {
+  height: 6%;
+  width: 6%;
+  border-radius: 0px;
 }
-h2.contactus{
-  text-align: center;
-  color:white;
+#checkout {
+  margin-left: 3%;
+  align-items: center;
+  align-content: center;
 }
-
-
-
-
-
-
-
-/* GENERAL  */
+/* END OF CHECKOUT */
+    
+/* GENERAL BODY THEME */
 html {
-  
   height: 100%;
-  
-   
 }
-
 
 body {
   background-image: url(https://s1.postimg.org/1qawlc0d2n/background.jpg);
   background-position: center;
   background-size: cover;
   height: 100%;
- 
   margin: 5%;
 }
 
-
-
-
-h1 {
-  font-size: 45px;
-  color: white;
-	
-}
-h5 {
-  color: white;
-}
-
-a:link {
-	color: white;
-	text-decoration: none;
-}
-
-a:visited {
-	color: white;
-}
-
-a:hover {}
-
-a:active{}
-
-
 .item-box {
-  background: RGBA(255, 255, 255, .6);
+  margin-top: 20px;
+  background: RGBA(255, 255, 255, .7);
   grid-template-columns: 50% 50%;
   grid-template-rows: 50% 50%;
-  margin: 10px;
+  border: 1px solid white;
+  border-radius: 5px;
+  color: midnightblue
 }
 .wrapper {
   grid-template-columns: 50% 50%;
   grid-template-rows: 50% 50%;
   display: grid;
-  grid-gap: 15px;
+  padding: 1%;
+}
+.box {
+  margin: 2%;
+  padding: 0%;
+  background: RGBA(255, 255, 255, 1);
+  grid-template-columns: 45% 45%;
+  grid-gap: 3%;
+  border-radius: 5px;
+  color: rgba(20, 106, 177, 0.884);
+  display: grid;
+}
+.data {
+  position: relative;
+}
+img {
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
 }
 
 #id {
   padding-top: 5%;
 }
+/* END OF GENERAL THEME */
 
-
-h1 {
-  font-size: 45px;
-  color: white;
-	
-}
-h5 {
-  color: white;
-}
-
+/* CONTACT US */
 .input-label {
-  color: white;
+  color: teal;
 }
 p.contactus2{
   text-align: center;
-  color:white;
+  color:teal;
 }
-p.contactus{
-  color:white;
+h4.contactus{
+  margin-right: 20%;
+  margin-left: 20%;
+  color:teal;
+  align-content: center;
+  text-align: center;
 }
 h2.contactus{
   text-align: center;
-  color:white;
+  color:teal;
 }
-/*Checkout form*/
-form.my-form{
+h3.contactus {
+  color: teal;
+}
+#about-box {
+  background: RGBA(255, 255, 255, 1);
+  padding: 10px;
+  border-radius: 5px;
+  color: teal;
+  border: 3px dotted teal;
+}
+.contact-box {
+  background: RGBA(255, 255, 255, .6);
+  height: 100%;
+  width: 100%;
+  border-radius: 2px;
+  color: teal;
+}
+.social {
+  height: 100px;
+  width: 100px;
+}
+#blog-icon {
+  margin-top: 10px;
+  border-radius: 5px;
+}
+ 
+/* END OF CONTACT US */
+
+
+/* FOOTER */
+footer {
   position: relative;
-  width: 500px;
-  left: 30%;
+  bottom: 0;
+  width: 100%;
+  /* fixed height of the footer */
+  height: 10%;
+  background-color: (29, 185, 196, 1); 
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  text-align: center;
   color: white;
-  }
-  /* End Checkout Form Styling */
+}
+.ppp {
+    grid-template-columns: 25% 25% 25% 25%;
+    display: inline;
+}
+
+#ponieA {
+    height: 5%;
+    width: 5%;
+}
+#ponieD {
+  height: 5%;
+  width: 5%;
+}
+#ponieS {
+  height: 5%;
+  width: 5%;
+}
+#ponieE {
+  height: 5%;
+  width: 5%;
+}
+/* END OF FOOTER */
+
+
+/* MISCELLANEOUS STYLING */
+button {
+  border-radius: 5px;
+  background: lightblue;
+}
+ a:link {
+  color: white;
+  text-decoration: none;
+}
+
+a:visited {
+  color: lightcyan;
+}
+
+a:hover {
+  color: orange;
+}
+
+a:active{
+  background-color: teal;
+}
+/* END OF MISCELLANEOUS */

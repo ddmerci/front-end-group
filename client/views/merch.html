@@ -1,70 +1,92 @@
-
-    <div class="jumbotron jumbotron-fluid">
-        <a href="/products/merch">
-            <img id="header-logo" src="https://s1.postimg.org/6boi8sj1kf/Screen_Shot_2017-10-25_at_9.18.50_PM.png" alt=""> </a>
-    </div>
-    <nav class="navbar navbar-default">
-        <div class="container-fluid">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
-                    aria-expanded="false">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-
-            </div>
-
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <ul class="nav navbar-nav navbar-right">
-                <li class="nav-item">
-                    <a class="nav-link" href="/products/merch">MERCH</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/products/apparel">APPAREL</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/contact">CONTACT</a>
-                </li>
-                <li>
-                    <a href="/checkout">
-                        <img id="cart-icon" src="http://www.clker.com/cliparts/m/8/v/j/x/J/shopping-cart-blur-hi.png"
-                            alt="">
-                        <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-                    </a>
-                </li>
-            </ul>
+<div class="jumbotron jumbotron-fluid">
+    <a href="/products/merch">
+        <img id="header-logo" src="https://s1.postimg.org/6boi8sj1kf/Screen_Shot_2017-10-25_at_9.18.50_PM.png" alt=""> </a>
+</div>
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+                aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
 
         </div>
-        <!-- /.navbar-collapse -->
-</div>
-<!-- /.container-fluid -->
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <ul class="nav navbar-nav navbar-right">
+            <li class="nav-item">
+                <a class="nav-link" href="/products/merch">MERCH</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/products/apparel">APPAREL</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/contact">CONTACT</a>
+            </li>
+            <li>
+                <a href="/checkout">
+                    <img id="cart-icon" src="http://www.clker.com/cliparts/m/8/v/j/x/J/shopping-cart-blur-hi.png" alt="">
+                    <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                </a>
+            </li>
+        </ul>
+
+    </div>
+    <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container-fluid -->
 </nav>
 
+<div id="merch-img"></div>
 
 
-
-
-<div id="home-merch"></div>
-
-
-
+<!-- MERCH GRID BINDING -->
 
 <div class="item-box">
+    <h2 style="text-align: center">
+        <img id="home-icon" src="https://s1.postimg.org/1b6x3m1o27/icon_home.png" alt=""> 
+        MERCH</h2>
+        
     <div class="wrapper">
 
         <div class="box" ng-repeat="m in merch" ng-controller="MerchController">
             <a ng-href="/products/{{ m.id }}">
-                <img src="{{ m.imageurl }}" width="350" height="350" ng-href="/products/{{ m.id }}">
+                <img src="{{ m.imageurl }}" width="250" height="250" ng-href="/products/{{ m.id }}">
             </a>
-            <h3 class="item-text">{{ m.title }}</h3>
-            <!-- <h5>{{ m.description }} {{ m.price }}</h5> -->
+            <div class="data">
+                <h3 class="item-text">{{ m.title }}</h3>
+                <h4 class="item-text">{{ m.price }}</h4>
 
-            <p>
-                <a class="btn btn-info" role="button" ng-href="/products/{{ m.id }}" ng-href="/products/detail">DETAIL</a>
-            </p>
+                <p>
+                    <a class="btn btn-info" role="button" ng-href="/products/{{ m.id }}" ng-href="/products/detail">DETAIL</a>
+                </p>
+            </div>
         </div>
     </div>
 </div>
+
+
+<!-- END OF MERCH GRID BINDING -->
+
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<!-- FOOTER -->
+<footer>
+        <div class="container">
+                <a ng-href="/"><h5>PINK PRANCING PONIES</h5></a>
+                <h5 class="ppp">ANTHONY<img id="ponieA" src="http://www.clker.com/cliparts/w/D/J/x/O/0/horse-md.png" alt="">
+                <h5 class="ppp">DEDE<img id="ponieD" src="http://www.clker.com/cliparts/w/D/J/x/O/0/horse-md.png" alt=""></h5>
+                <h5 class="ppp">SAM<img id="ponieS"src="http://www.clker.com/cliparts/w/D/J/x/O/0/horse-md.png" alt=""></h5>
+                <h5 class="ppp">ELIAS<img id="ponieE" src="http://www.clker.com/cliparts/w/D/J/x/O/0/horse-md.png" alt=""></h5>
+                <h5> 2017 &copy;</h5>
+        </div>
+</footer>
+<!-- END OF FOOTER -->

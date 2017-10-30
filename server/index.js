@@ -19,28 +19,4 @@ app.use('/api', api);
 app.get('*', routing.stateRouting);
 
 
-//setting up HTML 5 Routing Compatibility//
-// function isAsset(path) {
-//     var pieces = path.split('/');
-//     if (pieces.length === 0) { return false; }
-//     var last = pieces[pieces.length - 1];
-//     if (path.indexOf('/api') !== -1 || path.indexOf('/?') !== -1) {
-//         return true;
-//     } else if (last.indexOf('.') !== -1) {
-//         return true;
-//     } else {
-//         return false;
-//     }
-// }
-
-// app.get('*', function (req, res, next) {
-//     if (isAsset(req.url)) {
-//         return next();
-//     } else {
-//         res.sendFile(path.join(clientPath, 'index.html'));
-//     }
-// });
-//end HTML 5 Routing Compatibility code//	
-
-
 app.listen(process.env.PORT || 3000);

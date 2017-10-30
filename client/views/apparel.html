@@ -29,8 +29,7 @@
             </li>
             <li>
                 <a href="/checkout">
-                    <img id="cart-icon" src="http://www.clker.com/cliparts/m/8/v/j/x/J/shopping-cart-blur-hi.png"
-                        alt="">
+                    <img id="cart-icon" src="http://www.clker.com/cliparts/m/8/v/j/x/J/shopping-cart-blur-hi.png" alt="">
                     <i class="fa fa-shopping-cart" aria-hidden="true"></i>
                 </a>
             </li>
@@ -38,8 +37,8 @@
 
     </div>
     <!-- /.navbar-collapse -->
-</div>
-<!-- /.container-fluid -->
+    </div>
+    <!-- /.container-fluid -->
 </nav>
 
 
@@ -49,15 +48,35 @@
 
 <!-- APPAREL CONTROLLER BINDING-->
 <div class="item-box">
-<div class="wrapper">
-    <div ng-repeat="a in apparel" ng-controller="ApparelController">
-        <a ng-href="/products/{{ a.id }}"><img src="{{ a.imageurl }}" width="300" height="300"></a> 
-        <h3>{{ a.title }}</h3>
-        <!-- <h5>{{ a.description }} {{ a.price }}</h5> -->
+    <h2 style="text-align: center">APPAREL</h2>
+    <div class="wrapper">
+        <div class="box" ng-repeat="a in apparel" ng-controller="ApparelController">
+            <a ng-href="/products/{{ a.id }}">
+                <img src="{{ a.imageurl }}" width="250" height="250">
+            </a>
+            <div class="data">
+                <h3 class="item-text">{{ a.title }}</h3>
+                <h4 class="item-text">{{ a.price }}</h4>
 
-        <p>
-            <a class="btn btn-info" role="button" ng-href="/products/{{ a.id }}">MORE INFO</a>
-        </p>
+                <p>
+                    <a class="btn btn-info" role="button" ng-href="/products/{{ a.id }}">MORE INFO</a>
+                </p>
+            </div>
+        </div>
     </div>
 </div>
-</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<footer>
+        <div class="container">
+                <a ng-href="/"><h5>PINK PRANCING PONIES</h5></a>
+                <h5 class="ppp">ANTHONY<img id="ponieA" src="http://www.clker.com/cliparts/w/D/J/x/O/0/horse-md.png" alt="">
+                <h5 class="ppp">DEDE<img id="ponieD" src="http://www.clker.com/cliparts/w/D/J/x/O/0/horse-md.png" alt=""></h5>
+                <h5 class="ppp">SAM<img id="ponieS"src="http://www.clker.com/cliparts/w/D/J/x/O/0/horse-md.png" alt=""></h5>
+                <h5 class="ppp">ELIAS<img id="ponieE" src="http://www.clker.com/cliparts/w/D/J/x/O/0/horse-md.png" alt=""></h5>
+                <h5> 2017 &copy;</h5>
+        </div>
+</footer>
